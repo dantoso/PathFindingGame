@@ -1,0 +1,7 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1706631414
+GameScene.tscn::PackedScene::6971452678107851006::1706631205::0::1::::<><>::res://Tiles.gd<>res://Tile.gd
+icon.svg::CompressedTexture2D::8344909334160459429::1706558278::1706558289::1::::<><>::
+Tile.gd::GDScript::-1::1706631298::0::1::::Tile<>Area2D<>::
+Tile.tscn::PackedScene::4393537989503870930::1706631205::0::1::::<><>::res://Tile.gd
+Tiles.gd::GDScript::-1::1706631097::0::1::::Tiles<>Node2D<>::

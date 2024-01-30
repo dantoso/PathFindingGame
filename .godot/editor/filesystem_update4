@@ -1,0 +1,5 @@
+res://GameScene.tscn
+res://Tile.tscn
+res://Tiles.gd
+res://Tile.gd
+res://TilePolygon.gd
