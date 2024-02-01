@@ -9,7 +9,7 @@ var shape: RectangleShape2D
 var identifier: = Vector2.ZERO
 
 func _ready() -> void:
-	polygon.color.a = 0
+	polygon.deactivate()
 	
 	for child in children:
 		if child is CollisionShape2D:
@@ -21,13 +21,12 @@ func _ready() -> void:
 
 
 func _mouse_enter() -> void:
-	polygon.color.a = 0.5
-	print(identifier)
+	polygon.activate()
+	
 
 
 func _mouse_exit() -> void:
-	polygon.color.a = 0
-
+	polygon.deactivate()
 
 
 func clone() -> Tile:
