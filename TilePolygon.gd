@@ -8,32 +8,41 @@ func _draw() -> void:
 	draw_rect(parent.shape.get_rect(), color, true)
 
 
-func deactivate() -> void:
+func deselectedState() -> void:
 	color.a = 0
 	callable = Callable(self, "doNothing")
-	
 
 
-func activate() -> void:
+func selectedState() -> void:
 	color.a = 0.5
 	callable = Callable(self, "handleInput")
 
 
-func doNothing(event: InputEvent) -> void:
+func doNothing(_event: InputEvent) -> void:
 	pass
-
-
-func handleInput(event: InputEvent) -> void:
-	if event.is_action_pressed("add_start"):
-		print("adding start to ", parent.identifier)
-	elif event.is_action_pressed("add_end"):
-		print("adding end to ", parent.identifier)
-	elif event.is_action("add_wall"):
-		print("adding wall to ", parent.identifier)
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	callable.call(event)
+
+
+func handleInput(event: InputEvent) -> void:
+	if event.is_action_pressed("add_start"):
+		parent.pieceContainer.addStart()
+	elif event.is_action_pressed("add_end"):
+		parent.pieceContainer.addEnd()
+	elif event.is_action("add_wall"):
+		parent.pieceContainer.addWall()
+	elif event.is_action("delete"):
+		parent.pieceContainer.delete()
+
+
+
+
+
+
+
+
 
 
 

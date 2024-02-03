@@ -4,12 +4,13 @@ class_name Tile
 @export var side: = 40
 @onready var children: = get_children()
 @onready var polygon: = $Polygon2D
+@onready var pieceContainer: = $PieceContainer
 
 var shape: RectangleShape2D
 var identifier: = Vector2.ZERO
 
 func _ready() -> void:
-	polygon.deactivate()
+	polygon.deselectedState()
 	
 	for child in children:
 		if child is CollisionShape2D:
@@ -21,12 +22,11 @@ func _ready() -> void:
 
 
 func _mouse_enter() -> void:
-	polygon.activate()
-	
+	polygon.selectedState()
 
 
 func _mouse_exit() -> void:
-	polygon.deactivate()
+	polygon.deselectedState()
 
 
 func clone() -> Tile:
