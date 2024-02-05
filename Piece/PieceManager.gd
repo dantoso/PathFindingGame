@@ -1,32 +1,42 @@
 extends Node
 class_name PieceManager
 
-var _hasStart: = true
-var _hasEnd: = true
-
-static var main: = PieceManager.new():
-	set(new_value):
-		pass
-
+var _endLocation: PieceContainer = null
+var _startLocation: PieceContainer = null
 
 func hasStartPiece() -> bool:
-	return _hasStart
+	return _startLocation == null
 
 
 func hasEndPiece() -> bool:
-	return _hasEnd
+	return _endLocation == null
 
 
-func setHasStart(val: bool):
-	_hasStart = val
+func setStartTo(container: PieceContainer) -> StartPiece:
+	if _startLocation:
+		_startLocation.piece = null
+	
+	_startLocation = container
+	return StartPiece.new()
 
 
-func setHasEnd(val: bool):
-	_hasEnd = val
+func setEndTo(container: PieceContainer) -> EndPiece:
+	if _endLocation:
+		_endLocation.piece = null
+	
+	_endLocation = container
+	return EndPiece.new()
+
+
+func deletePiece(piece: Piece) -> void:
+	if piece is StartPiece:
+		_startLocation = null
+	elif piece is EndPiece:
+		_endLocation = null
 
 
 func startPathing() -> bool:
-	if _hasStart || _hasEnd:
+	if hasStartPiece() || hasEndPiece():
 		return false
 	
 	# do pathing

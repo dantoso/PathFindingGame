@@ -8,8 +8,7 @@ func delete() -> void:
 	if !piece:
 		return
 	
-	parent.pieceManager.setHasStart(piece is StartPiece)
-	parent.pieceManager.setHasEnd(piece is EndPiece)
+	parent.pieceManager.deletePiece(piece)
 	piece = null
 	
 	print("deleting structure in ", parent.identifier)
@@ -18,16 +17,15 @@ func delete() -> void:
 func addStart() -> void:
 	if piece is StartPiece:
 		return
-	parent.pieceManager.setHasStart(false)
-	piece = StartPiece.new()
+	
+	piece = parent.pieceManager.setStartTo(self)
 	print("adding start to ", parent.identifier)
 
 
 func addEnd() -> void:
 	if piece is EndPiece:
 		return
-	parent.pieceManager.setHasEnd(false)
-	piece = EndPiece.new()
+	piece = parent.pieceManager.setEndTo(self)
 	print("adding end to ", parent.identifier)
 
 
