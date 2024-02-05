@@ -9,3 +9,4 @@ res://Piece/StartPiece.gd
 res://Piece/PieceManager.gd
 res://Piece/EndPiece.gd
 res://Piece/WallPiece.gd
+res://Tiles.gd

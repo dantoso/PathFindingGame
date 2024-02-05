@@ -5,6 +5,8 @@ class_name Grid
 @onready var screen: = get_viewport_rect()
 @onready var tileModel: Tile = $Tile
 
+var pieceManager: = PieceManager.new()
+
 func _ready() -> void:
 	remove_child(tileModel)
 	
@@ -31,6 +33,7 @@ func addGrid(rows: int, columns: int) -> void:
 			if clone:
 				clone.identifier = Vector2(j, i)
 				clone.position = pos
+				clone.pieceManager = pieceManager
 				add_child(clone)
 
 

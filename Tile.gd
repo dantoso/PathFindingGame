@@ -7,6 +7,8 @@ class_name Tile
 @onready var pieceContainer: = $PieceContainer
 
 var shape: RectangleShape2D
+var pieceManager: PieceManager
+
 var identifier: = Vector2.ZERO
 
 func _ready() -> void:

@@ -23,3 +23,12 @@ func setHasStart(val: bool):
 
 func setHasEnd(val: bool):
 	_hasEnd = val
+
+
+func startPathing() -> bool:
+	if _hasStart || _hasEnd:
+		return false
+	
+	# do pathing
+	
+	return true
