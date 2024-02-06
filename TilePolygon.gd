@@ -3,6 +3,7 @@ class_name TilePolygon
 
 @onready var parent: Tile = get_parent()
 var callable: = Callable(self, "doNothing")
+var standardColor: Color = color
 
 func _draw() -> void:
 	draw_rect(parent.shape.get_rect(), color, true)

@@ -2,7 +2,13 @@ extends Node
 class_name PieceContainer
 
 @onready var parent: Tile = get_parent()
-var piece: Piece = null
+var piece: Piece = null:
+	set(new_value):
+		piece = new_value
+		if new_value:
+			parent.polygon.color = piece.color
+		else:
+			parent.polygon.color = parent.polygon.standardColor
 
 func delete() -> void:
 	if !piece:

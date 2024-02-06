@@ -5,3 +5,7 @@ res://Grid.gd
 res://Piece/Piece.gd
 res://TilePolygon.gd
 res://Tile.gd
+res://Piece/StartPiece.gd
+res://Piece/EndPiece.gd
+res://Piece/WallPiece.gd
+res://PieceContainer.gd

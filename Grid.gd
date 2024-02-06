@@ -21,6 +21,7 @@ func _ready() -> void:
 
 
 func addGrid(rows: int, columns: int) -> void:
+	print(rows, " ", columns)
 	for i in rows:
 		for j in columns:
 #			await get_tree().create_timer(0.01).timeout
@@ -38,6 +39,9 @@ func addGrid(rows: int, columns: int) -> void:
 				tile.pieceManager = pieceManager
 				add_child(tile)
 				tiles[id] = tile
+			
+		
+	print(tiles.size())
 
 
 func startPathing() -> bool:
