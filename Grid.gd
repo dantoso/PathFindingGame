@@ -6,6 +6,7 @@ class_name Grid
 @onready var tileModel: Tile = $Tile
 
 var pieceManager: = PieceManager.new()
+var tiles: = {}
 
 func _ready() -> void:
 	remove_child(tileModel)
@@ -28,16 +29,26 @@ func addGrid(rows: int, columns: int) -> void:
 			pos.x = tileModel.side/2 + tileModel.side*j
 			pos.y = tileModel.side/2 + tileModel.side*i
 			
-			var clone: = tileModel.clone()
+			var tile: = tileModel.duplicate()
 			
-			if clone:
-				clone.identifier = Vector2(j, i)
-				clone.position = pos
-				clone.pieceManager = pieceManager
-				add_child(clone)
+			if tile:
+				var id: = Vector2(j, i)
+				tile.identifier = id
+				tile.position = pos
+				tile.pieceManager = pieceManager
+				add_child(tile)
+				tiles[id] = tile
 
 
-
+func startPathing() -> bool:
+	if pieceManager.hasStartPiece() || pieceManager.hasEndPiece():
+		return false
+	
+	var start: Tile = pieceManager.getStartTile()
+	var end: Tile = pieceManager.getEndTile()
+	# do pathing
+	
+	return true
 
 
 

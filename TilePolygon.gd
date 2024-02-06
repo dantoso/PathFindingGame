@@ -9,12 +9,12 @@ func _draw() -> void:
 
 
 func deselectedState() -> void:
-	color.a = 0
+	color.a = 1
 	callable = Callable(self, "doNothing")
 
 
 func selectedState() -> void:
-	color.a = 0.5
+	color.a = 0
 	callable = Callable(self, "handleInput")
 
 

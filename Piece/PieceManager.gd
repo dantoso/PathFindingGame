@@ -35,10 +35,9 @@ func deletePiece(piece: Piece) -> void:
 		_endLocation = null
 
 
-func startPathing() -> bool:
-	if hasStartPiece() || hasEndPiece():
-		return false
-	
-	# do pathing
-	
-	return true
+func getStartTile() -> Tile:
+	return _startLocation.parent
+
+
+func getEndTile() -> Tile:
+	return _endLocation.parent

@@ -31,12 +31,10 @@ func _mouse_exit() -> void:
 	polygon.deselectedState()
 
 
-func clone() -> Tile:
-	for child in children:
-		var childClone: = child.duplicate()
-		var clone = duplicate()
-		clone.add_child(childClone)
-		
-		return clone
-		
-	return null
+
+
+
+
+
+
+
