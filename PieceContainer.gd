@@ -27,8 +27,8 @@ func delete() -> void:
 func addStart() -> void:
 	if piece is StartPiece:
 		return
-	if piece:
-		delete()
+	
+	delete()
 	piece = parent.pieceManager.setStartTo(self)
 	print("adding start to ", parent.identifier)
 
@@ -36,8 +36,8 @@ func addStart() -> void:
 func addEnd() -> void:
 	if piece is EndPiece:
 		return
-	if piece:
-		delete()
+	
+	delete()
 	piece = parent.pieceManager.setEndTo(self)
 	print("adding end to ", parent.identifier)
 
@@ -45,7 +45,7 @@ func addEnd() -> void:
 func addWall() -> void:
 	if piece is WallPiece:
 		return
-	if piece:
-		delete()
+	
+	delete()
 	piece = WallPiece.new()
 	print("adding wall to ", parent.identifier)
