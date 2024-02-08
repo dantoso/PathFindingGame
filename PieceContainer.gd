@@ -7,8 +7,12 @@ var piece: Piece = null:
 		piece = new_value
 		if new_value:
 			parent.polygon.color = piece.color
+			parent.collision_layer = new_value.collisionLayer
+			parent.collision_mask = new_value.collisionMask
 		else:
 			parent.polygon.color = parent.polygon.standardColor
+			parent.collision_layer = 1
+			parent.collision_mask = 0
 
 func delete() -> void:
 	if !piece:
@@ -23,7 +27,8 @@ func delete() -> void:
 func addStart() -> void:
 	if piece is StartPiece:
 		return
-	
+	if piece:
+		delete()
 	piece = parent.pieceManager.setStartTo(self)
 	print("adding start to ", parent.identifier)
 
@@ -31,6 +36,8 @@ func addStart() -> void:
 func addEnd() -> void:
 	if piece is EndPiece:
 		return
+	if piece:
+		delete()
 	piece = parent.pieceManager.setEndTo(self)
 	print("adding end to ", parent.identifier)
 
@@ -38,5 +45,7 @@ func addEnd() -> void:
 func addWall() -> void:
 	if piece is WallPiece:
 		return
+	if piece:
+		delete()
 	piece = WallPiece.new()
 	print("adding wall to ", parent.identifier)

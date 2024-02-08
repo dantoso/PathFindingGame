@@ -3,8 +3,8 @@ class_name Tile
 
 @export var side: = 40
 @onready var children: = get_children()
-@onready var polygon: = $Polygon2D
-@onready var pieceContainer: = $PieceContainer
+@onready var polygon: Polygon2D = $Polygon2D
+@onready var pieceContainer: PieceContainer = $PieceContainer
 
 var shape: RectangleShape2D
 var pieceManager: PieceManager

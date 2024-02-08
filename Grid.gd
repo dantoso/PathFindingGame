@@ -52,6 +52,8 @@ func startPathing() -> bool:
 	var end: Tile = pieceManager.getEndTile()
 	# do pathing
 	
+	
+	
 	return true
 
 

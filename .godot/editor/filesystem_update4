@@ -1,11 +1,9 @@
 res://GameScene.tscn
-res://Piece/PieceManager.gd
 res://Tile.tscn
 res://Grid.gd
 res://Piece/Piece.gd
-res://TilePolygon.gd
-res://Tile.gd
 res://Piece/StartPiece.gd
-res://Piece/EndPiece.gd
 res://Piece/WallPiece.gd
+res://Piece/EndPiece.gd
 res://PieceContainer.gd
+res://Tile.gd
