@@ -41,3 +41,6 @@ func getStartTile() -> Tile:
 
 func getEndTile() -> Tile:
 	return _endLocation.parent
+
+
+

@@ -13,6 +13,9 @@ var piece: Piece = null:
 			parent.polygon.color = parent.polygon.standardColor
 			parent.collision_layer = 1
 			parent.collision_mask = 0
+		print("layer: ", parent.collision_layer)
+		print("mask: ", parent.collision_mask)
+
 
 func delete() -> void:
 	if !piece:

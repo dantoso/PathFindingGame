@@ -7,3 +7,5 @@ res://Piece/WallPiece.gd
 res://Piece/EndPiece.gd
 res://PieceContainer.gd
 res://Tile.gd
+res://Piece/PieceManager.gd
+res://LineDrawer.gd
